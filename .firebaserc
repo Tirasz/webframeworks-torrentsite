@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "torrent-garfield": {
+      "hosting": {
+        "garfield-torrent": [
+          "torrent-garfield"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "torrent-garfield"
+  }
+}

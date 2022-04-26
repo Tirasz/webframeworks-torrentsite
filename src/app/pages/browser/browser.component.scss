@@ -1,0 +1,51 @@
+//'date_added', 'uploader', 'category', 'name', 'seeders', 'leechers'];
+
+table{
+    width: 100%;
+}
+
+.mat-column-date_added {
+    width:10% !important;
+}
+
+.mat-header-date_added{
+    color: red;
+}
+
+
+.mat-column-uploader{
+
+}
+
+.mat-column-category{
+
+}
+th.mat-header-cell, td.mat-cell, td.mat-footer-cell{
+
+}
+.mat-column-name{
+
+}
+
+.mat-column-seeders{
+    flex: 0 0 10%;
+}
+
+.mat-column-leechers{
+    flex: 0 0 10%;
+}
+
+
+.mat-row:hover{
+    cursor: pointer;
+    background-color: #673ab7;
+    text-decoration: underline !important;
+    color:white !important;
+    .mat-cell{
+        color: white !important
+    }
+}
+
+.mat-spinner{
+    margin:auto;
+}

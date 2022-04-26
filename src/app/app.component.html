@@ -1,0 +1,26 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav>
+    <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page" (onCloseSidenav)="onClose($event, sidenav)" [currentUser] ="currentUser" (onLogout)="logout($event)"></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <div fxHide.gt-xs>
+        <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+      <div>TORRENT APP</div>
+      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+          <li><a routerLink="/browser">Browse torrents</a></li>
+          <li *ngIf="(currentUser)"><a routerLink="/create-torrent">Upload torrent</a></li>
+          <li *ngIf="!(currentUser)"><a routerLink="/login" >Login</a></li>
+          <li *ngIf="!(currentUser)"><a routerLink="/register">Register</a></li>
+          <li *ngIf="(currentUser)"><a routerLink="/login" (click)="logout()">Logout</a></li>
+        </ul>
+      </div>
+    </mat-toolbar>
+    <app-message [type]="currentMessage.type" [title]="currentMessage.title" [subTitle]="currentMessage.subTitle" [show]="currentMessage.show"></app-message>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

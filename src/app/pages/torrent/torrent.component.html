@@ -1,0 +1,46 @@
+<div class="main_component">
+    <div class="div-flex" *ngIf="loading">
+            <mat-spinner></mat-spinner>
+    </div>
+    
+    <div class="div-flex" *ngIf="!loading">
+        <mat-card *ngIf="currentOwner" class="purplexd">
+            <mat-card>{{torrent.name}}</mat-card>
+            <mat-card  class="icon-string edit button" (click) = "toEdit()">
+                <mat-icon>edit</mat-icon>
+                Edit 
+            </mat-card>
+        </mat-card>
+        
+        <mat-card class="other-div-flex greyxd">
+            <mat-card class="icon-string">
+                <mat-icon>person_pin</mat-icon>
+                {{user.username}}
+            </mat-card>
+            <mat-card class="icon-string">
+                <mat-icon>date_range</mat-icon>
+                {{torrent.date_added | date : 'shortDate'}}
+            </mat-card>
+            <mat-card class="icon-string">
+                <mat-icon>category</mat-icon>
+                {{torrent.category}}
+            </mat-card>
+        </mat-card>
+        <mat-card class="comments-container">
+            <mat-card class="comment">
+                <form [formGroup]="newCommentForm" (ngSubmit)="createComment()">
+                    <mat-form-field class="input">
+                        <textarea formControlName="content" matInput placeholder="Your comment" cdkTextareaAutosize
+                        cdkAutosizeMinRows="6"></textarea>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!newCommentForm.valid">Comment</button>
+                </form>
+        </mat-card>
+    </mat-card>
+        <ng-container *ngFor="let _comment of comments">
+            <app-comment [comment] = "_comment"></app-comment>
+        </ng-container>
+
+        
+    </div>
+</div>

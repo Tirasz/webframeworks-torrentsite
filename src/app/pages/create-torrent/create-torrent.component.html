@@ -1,0 +1,29 @@
+<div class="main_component">
+    <div class="div-flex" *ngIf="loading">
+            <mat-spinner></mat-spinner>
+    </div>
+    
+    <div class="div-flex" *ngIf="!loading">
+        <h1>Upload a new torrent!</h1>
+        <form [formGroup]="newTorrentForm" (ngSubmit)="createTorrent()">
+            <mat-form-field>
+                <mat-label for="name">Torrent name: </mat-label>
+                <input matInput type="text" formControlName="name" required type="text"/>
+                <mat-error *ngIf="newTorrentForm.value.name">Name must be betweeen 3 and 40 characters long!</mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="fill">
+                <mat-label>Select a category</mat-label>
+                <mat-select formControlName="category">
+                    <mat-option *ngFor="let category of categories" [value]="category">
+                      {{category}}
+                    </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div>
+                <span class="buttons">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="!newTorrentForm.valid">Upload</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>

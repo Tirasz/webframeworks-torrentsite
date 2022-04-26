@@ -1,0 +1,22 @@
+<mat-card class="comments-container">
+    <mat-card class="comment">
+        {{comment.content}}
+        
+        <mat-card class="social-container">
+            <span class="icon-string">
+                <mat-icon>person_pin</mat-icon>
+                {{user.username}}
+            </span>
+            <span class="icon-string">
+                <mat-icon>date_range</mat-icon>
+                {{comment.date_added | date : 'shortDate'}}
+            </span>
+            <span class="icon-string">
+                <mat-icon class="upvote button" (click)="rate(1)"  [ngClass]="{'upvoted': currentUserRating.value == 1} ">thumb_up</mat-icon>
+                <mat-icon class="downvote button" (click)="rate(-1)" [ngClass]="{'downvoted': currentUserRating.value == -1} ">thumb_down</mat-icon>
+                <p [ngStyle]="{'color': ((ratings | sum:'value') < 0)? '#ff9999' : 'greenyellow'}">{{ratings | sum:'value'}}</p>
+                
+            </span>
+        </mat-card>
+    </mat-card>
+</mat-card>

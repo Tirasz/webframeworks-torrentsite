@@ -1,0 +1,134 @@
+
+* {
+    text-shadow: 3px 2px 3px rgba(0,0,0,.2) !important;
+}
+.div-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top:3em;
+}
+
+.other-div-flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: center;
+    p{
+        margin:20px;
+    }
+    
+}
+
+.mat-spinner{
+    margin:auto;
+}
+
+.main_component {
+    height: 100vh;
+}
+
+form div {
+    padding: 5px 5px 5px 5px;
+}
+
+form {
+    display: inline-grid;
+    width: 50%;
+    align-self: center;
+}
+
+.subForm {
+    width: 100%;
+    display: inline-grid;
+}
+
+.buttons {
+    padding: 5px;
+}
+
+button {
+    width: 100px;
+}
+
+
+.purplexd{
+    background-color: #673ab7;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    .mat-card{
+        font-size: 1.5em;
+    }
+}
+
+.greyxd{
+    background-color: #673ab7;
+    margin-top:10px;
+}
+
+
+.icon-string{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+    .mat-icon{
+        margin-right:7px;
+    }
+    p{
+        margin:0;
+        font-weight: bold;
+    }
+}
+
+.button{
+    transition:0.25s;
+    cursor: pointer;
+}
+.button:hover{
+    font-size: 28px !important;
+}
+
+
+
+
+.comments-container{
+    display:flex;
+    flex-direction: column;
+    .comment{
+        background-color:  #d4baff;
+        margin: 1em;
+    }
+    form{
+        width: 100%;
+    }
+    .social-container{
+        background-color:  #8263b4;
+        display:flex;
+        justify-content: space-between;
+        margin-top:10px;
+
+        .downvote:hover{
+            text-shadow: 3px 2px 3px rgba(255, 0, 0, 0.2);
+        }
+
+        .upvote:hover{
+            text-shadow: 3px 2px 3px rgba(0, 255, 42, 0.2);
+        }
+
+        .downvote:active, .downvoted{
+            color:red;
+        }
+
+        .upvote:active, .upvoted{
+            color:greenyellow
+        }
+    }
+}
+
+.edit{
+    margin-left:20px;
+}
+
