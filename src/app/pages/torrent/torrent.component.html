@@ -4,9 +4,9 @@
     </div>
     
     <div class="div-flex" *ngIf="!loading">
-        <mat-card *ngIf="currentOwner" class="purplexd">
+        <mat-card  class="purplexd">
             <mat-card>{{torrent.name}}</mat-card>
-            <mat-card  class="icon-string edit button" (click) = "toEdit()">
+            <mat-card *ngIf="currentOwner" class="icon-string edit button" (click) = "toEdit()">
                 <mat-icon>edit</mat-icon>
                 Edit 
             </mat-card>
